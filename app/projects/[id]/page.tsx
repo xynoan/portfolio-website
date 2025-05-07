@@ -59,13 +59,17 @@ const projects = [
   },
 ];
 
-type Props = {
-  params: { id: string }
-  searchParams: Record<string, string | string[] | undefined>
-}
+type ProjectParams = {
+  id: string;
+};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const projectId = parseInt(params.id);
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<ProjectParams> 
+}): Promise<Metadata> {
+  const { id } = await params;
+  const projectId = parseInt(id);
   const project = projects.find(p => p.id === projectId);
   
   if (!project) {
@@ -80,8 +84,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProjectDetail({ params }: Props) {
-  const projectId = parseInt(params.id);
+export default async function ProjectDetail({ 
+  params 
+}: { 
+  params: Promise<ProjectParams> 
+}) {
+  const { id } = await params;
+  const projectId = parseInt(id);
   const project = projects.find(p => p.id === projectId);
   
   if (!project) {
