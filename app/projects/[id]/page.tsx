@@ -58,7 +58,11 @@ const projects = [
   },
 ];
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
+type Props = {
+  params: { id: string }
+}
+
+export default function ProjectDetail({ params }: Props) {
   const projectId = parseInt(params.id);
   const project = projects.find(p => p.id === projectId);
   
