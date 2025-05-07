@@ -1,6 +1,9 @@
 import Link from "next/link";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
+import { createMetadata } from "../metadata";
+
+export const metadata = createMetadata('Imaginations', 'Explore my creative and imaginative projects.');
 
 export default function Projects() {
   const projects = [
@@ -33,7 +36,7 @@ export default function Projects() {
       <GalaxyBackground />
       
       <div className="container relative z-10 mx-auto px-4 py-16">
-        <h1 className="mb-8 text-4xl font-bold">Projects</h1>
+        <h1 className="mb-8 text-4xl font-bold">Imaginations</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {projects.map((project) => (
@@ -56,8 +59,8 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <Link href={`/projects/${project.id}`}>
-                <button className="w-full py-2 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium hover:from-purple-700 hover:to-indigo-700 transition-all">
+              <Link href={`/imaginations/${project.id}`}>
+                <button className="w-full py-2 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-medium hover:from-purple-700 hover:to-indigo-700 transition-all cursor-pointer">
                   View Details
                 </button>
               </Link>

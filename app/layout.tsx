@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { createMetadata } from "./metadata";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  title: "ncmorva | xynoan portfolio ✨",
-  description: "Portfolio website of xynoan that includes projects, skills, and contact information.",
-};
+export const metadata: Metadata = createMetadata('ncmorva');
 
 export default function RootLayout({
   children,

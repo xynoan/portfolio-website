@@ -12,7 +12,7 @@ const projects = [
     description: "A web application for exploring the cosmos and visualizing astronomical data.",
     technologies: ["React", "Three.js", "NASA API"],
     imageUrl: "/images/project-cosmic.jpg",
-    fullDescription: "Cosmic Explorer is a comprehensive web application designed for astronomy enthusiasts and researchers alike. It leverages NASA's public APIs to provide real-time data about celestial bodies, space missions, and astronomical events. The interactive 3D visualizations powered by Three.js allow users to explore the cosmos from the comfort of their browser, offering an immersive experience that bridges the gap between scientific data and visual understanding.",
+    fullDescription: "Cosmic Explorer is a comprehensive web application designed for astronomy enthusiasts and researchers alike. It leverages NASA's public APIs to provide real-time data my-story celestial bodies, space missions, and astronomical events. The interactive 3D visualizations powered by Three.js allow users to explore the cosmos from the comfort of their browser, offering an immersive experience that bridges the gap between scientific data and visual understanding.",
     features: [
       "Interactive 3D star map with real astronomical data",
       "Real-time tracking of ISS and other satellites",
@@ -79,7 +79,7 @@ export async function generateMetadata({
   }
   
   return {
-    title: project.title,
+    title: `${project.title} | xynoan portfolio ✨`,
     description: project.description,
   };
 }
@@ -103,11 +103,11 @@ export default async function ProjectDetail({
       <GalaxyBackground />
       
       <div className="container relative z-10 mx-auto px-4 py-16">
-        <Link href="/projects" className="inline-block mb-8 text-purple-400 hover:text-purple-300 transition-colors">
-          ← Back to Projects
+        <Link href="/imaginations" className="inline-block mb-8 text-purple-400 hover:text-purple-300 transition-colors">
+          ← Back to Imaginations
         </Link>
         
-        <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8">
+        <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-8 max-w-2xl mx-auto">
           <div className="h-64 mb-6 rounded-lg bg-gradient-to-br from-indigo-900/50 to-purple-900/50 flex items-center justify-center overflow-hidden">
             <div className="text-7xl opacity-30">✨</div>
           </div>

@@ -31,11 +31,11 @@ export default function NavButton() {
               <Link href="/" className="minecraft-btn block text-center">
                 Home
               </Link>
-              <Link href="/about" className="minecraft-btn block text-center">
-                About
+              <Link href="/my-story" className="minecraft-btn block text-center">
+                My Story
               </Link>
-              <Link href="/projects" className="minecraft-btn block text-center">
-                Projects
+              <Link href="/imaginations" className="minecraft-btn block text-center">
+                Imaginations
               </Link>
               <Link href="/contact" className="minecraft-btn block text-center">
                 Contact
@@ -49,10 +49,10 @@ export default function NavButton() {
       <div className="hidden md:block absolute top-6 right-8 z-20">
         <nav className="galaxy-nav">
           <ul className="flex space-x-6">
-            {['Home', 'About', 'Projects', 'Contact'].map((item, index) => (
+            {['Home', 'My Story', 'Imaginations', 'Contact'].map((item, index) => (
               <li key={index} className="nav-item">
                 <Link 
-                  href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} 
+                  href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase().replace(' ', '-')}`} 
                   className="relative group"
                 >
                   <span className="nav-text px-4 py-2 text-white font-medium tracking-wider minecraft-text transition-all duration-300
