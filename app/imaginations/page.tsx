@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
 import { createMetadata } from "../metadata";
@@ -9,31 +10,45 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Project 1",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      technologies: ["Next.js"],
-      imageUrl: "/images/project-cosmic.jpg",
+      title: "xyFood Generator",
+      description: "You're thinking of what to eat for breakfast, lunch, or dinner? xyFood Generator will generate the food for you in any country!",
+      technologies: ["React.js", "Bootstrap"],
+      imageUrl: "/imaginations/xyFood_Generator.png",
     },
     {
       id: 2,
-      title: "Project 2",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      technologies: ["Next.js", "D3.js", "TailwindCSS"],
-      imageUrl: "/images/project-stellar.jpg",
+      title: "xyReviewer",
+      description: "You're having a hard time consuming so many information at once? This discord bot will collect all skimmed information of any subject.",
+      technologies: ["JavaScript", "Express.js", "Node.js", "Discord.js"],
+      imageUrl: "/imaginations/xyReviewer.png",
     },
     {
       id: 3,
-      title: "Project 3",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      technologies: ["Vue", "Firebase", "Cloudinary"],
-      imageUrl: "/images/project-nebula.jpg",
+      title: "Library System",
+      description: "Browse books that can be read for free! The system will give a link where the book can be read.",
+      technologies: ["Java"],
+      imageUrl: "/imaginations/library_system.png",
     },
     {
       id: 4,
-      title: "Project 4",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      imageUrl: "/images/project-nebula.jpg",
+      title: "Café Ordering System",
+      description: "It is used for maintaining the details, products, billing, and maintains an inventory for a Café. The project has 3 accounts: Cashier, Employee, and Manager.",
+      technologies: ["Java", "MySQL", "JFrame"],
+      imageUrl: "/imaginations/Cafe_Ordering_System.png",
+    },
+    {
+      id: 5,
+      title: "xyAgenda",
+      description: "Manage your time and tasks efficiently.",
+      technologies: ["React Native", "Expo"],
+      imageUrl: "/imaginations/xyAgenda.jpg",
+    },
+    {
+      id: 6,
+      title: "xySavings",
+      description: "Helps you manage your money and savings efficiently.",
+      technologies: ["React Native", "Expo"],
+      imageUrl: "/imaginations/xySavings.jpg",
     },
   ];
 
@@ -52,7 +67,7 @@ export default function Projects() {
               className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/20"
             >
               <div className="h-48 mb-4 rounded-lg bg-gradient-to-br from-indigo-900/50 to-purple-900/50 flex items-center justify-center overflow-hidden">
-                <div className="text-5xl opacity-30">✨</div>
+                <Image src={project.imageUrl} alt={project.title} width="500" height="500"/>
               </div>
               <h3 className="text-xl font-bold mb-2 text-purple-300">{project.title}</h3>
               <p className="text-gray-300 mb-4">{project.description}</p>

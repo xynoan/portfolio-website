@@ -16,10 +16,10 @@ export default function ProjectNotFound() {
         </p>
         <div className="text-7xl mb-8">🌠</div>
         <Link 
-          href="/projects" 
+          href="/imaginations" 
           className="px-6 py-3 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all"
         >
-          Return to Projects
+          Return to Imaginations
         </Link>
       </div>
       
