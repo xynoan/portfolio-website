@@ -16,31 +16,30 @@ export default function MyStory() {
     {
       date: "March 2022",
       title: "My Coding Journey Begins",
-      description: "Started studying in freeCodeCamp"
+      description: "Started studying in freeCodeCamp.",
+      link: "https://github.com/xynoan/xynoan/blob/main/fCCchallenge.md"
     },
     {
-      date: "October 2022",
-      title: "First Web Development Project",
-      description: "Created my first HTML/CSS website"
+      date: "April 2022",
+      title: "CodeWars Journey",
+      description: "I used CW for improving my logical thinking on any programming language.",
+      link: "https://github.com/xynoan/xynoan/blob/main/CWchallenge.md"
     },
     {
-      date: "January 2023",
-      title: "JavaScript Deep Dive",
-      description: "Learned JavaScript and started building interactive web applications"
+      date: "August 2022",
+      title: "College Journey",
+      description: "I started college",
+      link: "https://github.com/xynoan/xynoan/blob/main/collegeChallenge.md"
     },
     {
-      date: "June 2023",
-      title: "React Framework",
-      description: "Started learning React and building component-based applications"
-    },
-    {
-      date: "January 2024",
-      title: "Next.js & Full Stack",
-      description: "Expanded into Next.js and full-stack development"
+      date: "May 2023",
+      title: "MOOC.fi Challenge",
+      description: "I wanted to take advantage of my vacation and not slack off so...",
+      link: "https://github.com/xynoan/xynoan/blob/main/moocFiChallenge.md"
     },
     {
       date: "Present",
-      title: "Continuous Learning",
+      title: "Perennial Development",
       description: "Currently focusing on advanced concepts and building real-world projects"
     }
   ];
@@ -84,6 +83,15 @@ export default function MyStory() {
                   <h3 className="text-xl font-bold text-purple-400">{event.date}</h3>
                   <h4 className="text-lg font-semibold mb-2">{event.title}</h4>
                   <p className="text-gray-300">{event.description}</p>
+                  {event.link && (
+                    <a 
+                      href={event.link} 
+                      target="_blank" 
+                      className="inline-block mt-2 text-purple-400 hover:text-purple-300 underline"
+                    >
+                      Check out blog here
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
