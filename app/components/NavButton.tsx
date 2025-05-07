@@ -1,27 +1,13 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function NavButton() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [clickSound, setClickSound] = useState<HTMLAudioElement | null>(null);
-
-  // Initialize the audio on client side only
-  useEffect(() => {
-    const audio = new Audio("/sounds/minecraft-click.mp3");
-    setClickSound(audio);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const playClickSound = () => {
-    if (clickSound) {
-      clickSound.currentTime = 0;
-      clickSound.play().catch(e => console.log("Audio play failed:", e));
-    }
   };
 
   return (
@@ -31,7 +17,6 @@ export default function NavButton() {
         <button
           onClick={() => {
             toggleMenu();
-            playClickSound();
           }}
           className="minecraft-btn h-12 w-12 rounded-md text-xl"
           aria-label="Toggle navigation menu"
@@ -43,16 +28,16 @@ export default function NavButton() {
         {isMenuOpen && (
           <div className="absolute bottom-16 right-0 w-40 animate-fadeIn">
             <div className="flex flex-col gap-2">
-              <Link href="/" className="minecraft-btn block text-center" onClick={playClickSound}>
+              <Link href="/" className="minecraft-btn block text-center">
                 Home
               </Link>
-              <Link href="/about" className="minecraft-btn block text-center" onClick={playClickSound}>
+              <Link href="/about" className="minecraft-btn block text-center">
                 About
               </Link>
-              <Link href="/projects" className="minecraft-btn block text-center" onClick={playClickSound}>
+              <Link href="/projects" className="minecraft-btn block text-center">
                 Projects
               </Link>
-              <Link href="/contact" className="minecraft-btn block text-center" onClick={playClickSound}>
+              <Link href="/contact" className="minecraft-btn block text-center">
                 Contact
               </Link>
             </div>
@@ -69,7 +54,6 @@ export default function NavButton() {
                 <Link 
                   href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} 
                   className="relative group"
-                  onClick={playClickSound}
                 >
                   <span className="nav-text px-4 py-2 text-white font-medium tracking-wider minecraft-text transition-all duration-300
                                    relative z-10 hover:text-[#8a2be2]">
@@ -87,4 +71,4 @@ export default function NavButton() {
       </div>
     </>
   );
-} 
+}

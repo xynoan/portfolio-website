@@ -3,6 +3,7 @@ import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
 
 export default function About() {
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
       {/* Galaxy Background */}
