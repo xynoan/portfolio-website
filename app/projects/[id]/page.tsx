@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import GalaxyBackground from "../../components/GalaxyBackground";
 import NavButton from "../../components/NavButton";
+import type { Metadata } from 'next';
 
 // This would typically come from a database
 const projects = [
@@ -60,6 +61,23 @@ const projects = [
 
 type Props = {
   params: { id: string }
+  searchParams: Record<string, string | string[] | undefined>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const projectId = parseInt(params.id);
+  const project = projects.find(p => p.id === projectId);
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+  
+  return {
+    title: project.title,
+    description: project.description,
+  };
 }
 
 export default function ProjectDetail({ params }: Props) {
