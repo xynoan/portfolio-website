@@ -57,8 +57,8 @@ export default function MyStory() {
           <p className="text-center">Last Updated: {lastUpdated}</p>
         </div>
         <div className="mb-6 max-w-4xl mx-auto">
-          <p>Hey there 👋 I'm 21 yrs old, currently in 3rd yr college. I've taken interest in programming since
-            March 2022, so that's 3 years now. Here's the timeline to better visualize my story 👇</p>
+          <p>Hey there 👋 I&#39;m 21 yrs old, currently in 3rd yr college. I&#39;ve taken interest in programming since
+            March 2022, so that&#39;s 3 years now. Here&#39;s the timeline to better visualize my story 👇</p>
         </div>
 
         {/* Timeline */}
