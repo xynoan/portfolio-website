@@ -9,23 +9,30 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Cosmic Explorer",
-      description: "A web application for exploring the cosmos and visualizing astronomical data.",
-      technologies: ["React", "Three.js", "NASA API"],
+      title: "Project 1",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      technologies: ["Next.js"],
       imageUrl: "/images/project-cosmic.jpg",
     },
     {
       id: 2,
-      title: "Stellar Dashboard",
-      description: "Interactive dashboard for tracking celestial events and star movements.",
+      title: "Project 2",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       technologies: ["Next.js", "D3.js", "TailwindCSS"],
       imageUrl: "/images/project-stellar.jpg",
     },
     {
       id: 3,
-      title: "Nebula Connect",
-      description: "Social platform for astronomy enthusiasts to share their space observations.",
+      title: "Project 3",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
       technologies: ["Vue", "Firebase", "Cloudinary"],
+      imageUrl: "/images/project-nebula.jpg",
+    },
+    {
+      id: 4,
+      title: "Project 4",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      technologies: ["React", "Node.js", "MongoDB"],
       imageUrl: "/images/project-nebula.jpg",
     },
   ];
