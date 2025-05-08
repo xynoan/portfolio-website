@@ -1,10 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
-import { createMetadata } from "../metadata";
-
-export const metadata = createMetadata('Imaginations', 'Explore my creative and imaginative projects.');
+import { useState } from "react";
 
 export default function Projects() {
   const projects = [
@@ -37,6 +37,36 @@ export default function Projects() {
     },
   ];
 
+  // Get unique technologies from all projects
+  const allTechnologies = Array.from(
+    new Set(projects.flatMap(project => project.technologies))
+  ).sort();
+
+  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+
+  // Toggle technology selection
+  const toggleTech = (technology: string) => {
+    setSelectedTechs(prev => {
+      if (prev.includes(technology)) {
+        return prev.filter(tech => tech !== technology);
+      } else {
+        return [...prev, technology];
+      }
+    });
+  };
+
+  // Clear all selections
+  const clearSelections = () => {
+    setSelectedTechs([]);
+  };
+
+  // Get filtered projects
+  const filteredProjects = selectedTechs.length === 0
+    ? projects
+    : projects.filter(project => 
+        selectedTechs.some(tech => project.technologies.includes(tech))
+      );
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
       <GalaxyBackground />
@@ -44,11 +74,45 @@ export default function Projects() {
       <div className="container relative z-10 mx-auto px-4 py-16">
         <h1 className="mb-8 text-4xl font-bold">Imaginations</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {projects.map((project) => (
+        <div className="mb-8">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold">Filter by Technologies:</h2>
+            {selectedTechs.length > 0 && (
+              <button 
+                className="px-3 py-1.5 rounded-full bg-red-600/70 text-white text-sm font-medium hover:bg-red-700 transition-all cursor-pointer"
+                onClick={clearSelections}
+              >
+                Clear Filters
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2" id="tech-filters">
+            {allTechnologies.map(tech => (
+              <button 
+                key={tech} 
+                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
+                  selectedTechs.includes(tech) 
+                    ? 'bg-purple-600 text-white' 
+                    : 'bg-indigo-900/50 text-indigo-200 hover:bg-indigo-700'
+                }`}
+                onClick={() => toggleTech(tech)}
+              >
+                {tech}
+              </button>
+            ))}
+          </div>
+          {selectedTechs.length > 0 && (
+            <div className="mt-3 text-sm text-gray-300">
+              <span>Selected: {selectedTechs.join(', ')}</span>
+            </div>
+          )}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" id="projects-grid">
+          {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/20"
+              className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/20 project-card"
             >
               <div className="h-48 mb-4 rounded-lg bg-gradient-to-br from-indigo-900/50 to-purple-900/50 flex items-center justify-center overflow-hidden">
                 <Image 
@@ -76,7 +140,11 @@ export default function Projects() {
                 {project.technologies.map((tech, index) => (
                   <span 
                     key={index} 
-                    className="px-2 py-1 text-xs rounded-full bg-indigo-900/50 text-indigo-200"
+                    className={`px-2 py-1 text-xs rounded-full ${
+                      selectedTechs.includes(tech)
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-indigo-900/50 text-indigo-200'
+                    }`}
                   >
                     {tech}
                   </span>
