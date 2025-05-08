@@ -19,72 +19,21 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "xyReviewer",
-      description: "Add subject and question, and simulate a real-time quiz!",
-      keyFeatures: ["Customizable quizzes", "Real-time feedback", "Performance tracking"],
-      technologies: ["JavaScript", "Express.js", "Node.js", "Discord.js", "MongoDB"],
-      imageUrl: "/imaginations/xyReviewer.png",
-      githubUrl: "https://github.com/xynoan/xyReviewer",
-    },
-    {
-      id: 3,
       title: "Library System",
       description: "Simulation of CRUD system with books",
       keyFeatures: ["Book management", "User accounts", "Search functionality"],
       technologies: ["Java"],
       imageUrl: "/imaginations/library_system.png",
-      githubUrl: "https://github.com/yourusername/Library-System",
-      demoUrl: null,
+      githubUrl: "https://github.com/xynoan/Library-System",
     },
     {
-      id: 4,
+      id: 3,
       title: "Café Ordering System",
       description: "Used for maintaining the details, products, billing, and maintains an inventory for a Café. The project has 3 accounts: Cashier, Employee, and Manager.",
       keyFeatures: ["Role-based access", "Inventory management", "Billing system"],
       technologies: ["Java", "MySQL", "JFrame"],
       imageUrl: "/imaginations/Cafe_Ordering_System.png",
-      githubUrl: "https://github.com/yourusername/Cafe-Ordering-System",
-      demoUrl: null,
-    },
-    {
-      id: 5,
-      title: "xyAgenda",
-      description: "Task management system for the day.",
-      keyFeatures: ["Add/remove tasks", "Drag and drop tasks (organize)", "Checklist"],
-      technologies: ["React Native", "Expo"],
-      imageUrl: "/imaginations/xyAgenda.jpg",
-      githubUrl: "https://github.com/yourusername/xyAgenda",
-      demoUrl: "https://xyagenda.vercel.app",
-    },
-    {
-      id: 6,
-      title: "xySavings",
-      description: "Add savings goal, daily savings, and this app will estimate when you will reach that goal.",
-      keyFeatures: ["Goal setting", "Progress tracking", "Prediction algorithm"],
-      technologies: ["React Native", "Expo"],
-      imageUrl: "/imaginations/xySavings.jpg",
-      githubUrl: "https://github.com/yourusername/xySavings",
-      demoUrl: "https://xysavings.vercel.app",
-    },
-    {
-      id: 7,
-      title: "School Management System",
-      description: "Add savings goal, daily savings, and this app will estimate when you will reach that goal.",
-      keyFeatures: ["Goal setting", "Progress tracking", "Prediction algorithm"],
-      technologies: ["React Native", "Expo"],
-      imageUrl: "/imaginations/xySavings.jpg",
-      githubUrl: "https://github.com/yourusername/xySavings",
-      demoUrl: "https://xysavings.vercel.app",
-    },
-    {
-      id: 8,
-      title: "Security Mobile App",
-      description: "Add savings goal, daily savings, and this app will estimate when you will reach that goal.",
-      keyFeatures: ["Goal setting", "Progress tracking", "Prediction algorithm"],
-      technologies: ["React Native", "Expo"],
-      imageUrl: "/imaginations/xySavings.jpg",
-      githubUrl: "https://github.com/yourusername/xySavings",
-      demoUrl: "https://xysavings.vercel.app",
+      githubUrl: "https://github.com/xynoan/Cafe_Ordering_System",
     },
   ];
 
@@ -102,7 +51,14 @@ export default function Projects() {
               className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-lg p-6 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-purple-500/20"
             >
               <div className="h-48 mb-4 rounded-lg bg-gradient-to-br from-indigo-900/50 to-purple-900/50 flex items-center justify-center overflow-hidden">
-                <Image src={project.imageUrl} alt={project.title} width="500" height="500"/>
+                <Image 
+                  src={project.imageUrl} 
+                  alt={project.title} 
+                  width={500} 
+                  height={300}
+                  className="w-auto h-auto max-w-full max-h-full object-contain"
+                  style={{ objectPosition: 'center' }}
+                />
               </div>
               <h3 className="text-xl font-bold mb-2 text-purple-300">{project.title}</h3>
               <p className="text-gray-300 mb-4">{project.description}</p>
