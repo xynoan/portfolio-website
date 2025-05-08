@@ -7,15 +7,12 @@ import GalaxyBackground from "./components/GalaxyBackground";
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a]">
-      {/* Galaxy Background */}
       <GalaxyBackground />
 
-      {/* Navigation Button - now positioned differently */}
       <div className="relative z-20">
         <NavButton />
       </div>
 
-      {/* Main Content Container */}
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-16 text-white">
         <div className="minecraft-text text-center">
           <h1 className="mb-2 text-3xl font-bold uppercase tracking-wider text-white">
@@ -40,7 +37,6 @@ export default function Home() {
         <div className="relative mt-8 flex h-40 w-40 items-center justify-center">
           <div className="absolute inset-0 animate-pulse rounded-full bg-[#8a2be2] bg-opacity-20 blur-md"></div>
           <div className="z-10 h-32 w-32 rounded-full border-2 border-[#9370db] bg-[#4b0082] bg-opacity-50 p-4">
-            {/* Placeholder for avatar or icon */}
             <div className="h-full w-full rounded-full bg-[#0a0a0a] bg-opacity-50">
               <Image src="/profile.png" alt="Avatar" width={80} height={80} />
             </div>

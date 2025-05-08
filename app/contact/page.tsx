@@ -9,7 +9,6 @@ export default function Contact() {
 
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
-            {/* Galaxy Background */}
             <GalaxyBackground/>
 
             <div className="container relative z-10 mx-auto px-4 py-16">
@@ -20,7 +19,6 @@ export default function Contact() {
                 </Link>
             </div>
 
-            {/* Navigation Button */}
             <NavButton/>
         </div>
     );
