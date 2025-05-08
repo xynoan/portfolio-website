@@ -3,11 +3,13 @@
 import Image from "next/image";
 import NavButton from "./components/NavButton";
 import GalaxyBackground from "./components/GalaxyBackground";
+import CursorGalaxyEffect from "./components/CursorGalaxyEffect";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a]">
       <GalaxyBackground />
+      <CursorGalaxyEffect />
 
       <div className="relative z-20">
         <NavButton />

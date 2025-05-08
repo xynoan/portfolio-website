@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
+import CursorGalaxyEffect from "../components/CursorGalaxyEffect";
 import {createMetadata} from "../metadata";
 
 export const metadata = createMetadata('My Story', 'Learn about my journey, experiences, and what drives me as a developer.');
@@ -47,6 +48,7 @@ export default function MyStory() {
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
             <GalaxyBackground/>
+            <CursorGalaxyEffect />
 
             <div className="container relative z-10 mx-auto px-4 py-16">
                 <h1 className="mb-8 text-4xl font-bold">My Story</h1>

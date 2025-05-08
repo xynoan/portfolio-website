@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
+import CursorGalaxyEffect from "../components/CursorGalaxyEffect";
 import { useState } from "react";
 
 export default function Projects() {
@@ -70,6 +71,7 @@ export default function Projects() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
       <GalaxyBackground />
+      <CursorGalaxyEffect />
       
       <div className="container relative z-10 mx-auto px-4 py-16">
         <h1 className="mb-8 text-4xl font-bold">Imaginations</h1>

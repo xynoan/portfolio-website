@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavButton from "../components/NavButton";
 import GalaxyBackground from "../components/GalaxyBackground";
+import CursorGalaxyEffect from "../components/CursorGalaxyEffect";
 import { createMetadata } from "../metadata";
 
 export const metadata = createMetadata('Contact', 'Get in touch with me for collaborations, questions, or just to say hello.');
@@ -10,6 +11,7 @@ export default function Contact() {
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
             <GalaxyBackground/>
+            <CursorGalaxyEffect />
 
             <div className="container relative z-10 mx-auto px-4 py-16">
                 <h1 className="mb-8 text-4xl font-bold">Contact</h1>
